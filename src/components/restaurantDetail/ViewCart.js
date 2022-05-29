@@ -39,41 +39,6 @@ export default function ViewCart({ navigation }) {
       });
   };
 
-  const styles = StyleSheet.create({
-    modalContainer: {
-      flex: 1,
-      justifyContent: "flex-end",
-      backgroundColor: "rgba(0,0,0,0.7)",
-    },
-
-    modalCheckoutContainer: {
-      backgroundColor: "white",
-      padding: 16,
-      height: 500,
-      borderWidth: 1,
-    },
-
-    restaurantName: {
-      textAlign: "center",
-      fontWeight: "600",
-      fontSize: 18,
-      marginBottom: 10,
-    },
-
-    subtotalContainer: {
-      flexDirection: "row",
-      justifyContent: "space-between",
-      marginTop: 15,
-    },
-
-    subtotalText: {
-      textAlign: "left",
-      fontWeight: "600",
-      fontSize: 15,
-      marginBottom: 10,
-    },
-  });
-
   const checkoutModalContent = () => {
     return (
       <>
@@ -84,7 +49,7 @@ export default function ViewCart({ navigation }) {
               <OrderItem key={index} item={item} />
             ))}
             <View style={styles.subtotalContainer}>
-              <Text style={styles.subtotalText}>Subtotal</Text>
+              <Text style={styles.subtotalText}>Giá </Text>
               <Text>{totalUSD}</Text>
             </View>
             <View style={{ flexDirection: "row", justifyContent: "center" }}>
@@ -200,3 +165,38 @@ export default function ViewCart({ navigation }) {
     </>
   );
 }
+
+const styles = StyleSheet.create({
+  modalContainer: {
+    flex: 1,
+    justifyContent: "flex-end",
+    backgroundColor: "rgba(0,0,0,0.7)",
+  },
+
+  modalCheckoutContainer: {
+    backgroundColor: "white",
+    padding: 16,
+    height: 500,
+    borderWidth: 1,
+  },
+
+  restaurantName: {
+    textAlign: "center",
+    fontWeight: "600",
+    fontSize: 18,
+    marginBottom: 10,
+  },
+
+  subtotalContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginTop: 15,
+  },
+
+  subtotalText: {
+    textAlign: "left",
+    fontWeight: "600",
+    fontSize: 15,
+    marginBottom: 10,
+  },
+});

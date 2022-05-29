@@ -55,7 +55,7 @@ export default function OrderCompleted() {
           loop={false}
         />
         <Text style={{ fontSize: 20, fontWeight: "bold" }}>
-          Your order at {restaurantName} has been placed for {totalUSD}
+          Bạn đặt hàng tại {restaurantName}, với giá {totalUSD}
         </Text>
         <ScrollView>
           <MenuItems
