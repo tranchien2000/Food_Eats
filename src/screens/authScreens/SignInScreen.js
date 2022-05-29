@@ -17,22 +17,15 @@ import Header from "../../components/home/Header";
 // import auth from "@react-native-firebase/auth";
 // import { SignInContext } from "../../contexts/authContext";
 
-export default function SignInScreen() {
+export default function SignInScreen({ navigation }) {
   const [textInput2Fossued, setTextInput2Fossued] = useState(false);
   const textInpput1 = useRef(1);
   const textInput2 = useRef(2);
 
   return (
     <View style={styles.container}>
-      <Header title="MY ACCOUNT" type="arrow-left" navigation={navigation} />
-
-      <View style={{ marginLeft: 20, marginTop: 10 }}>
-        <Text style={title}>Sign-In</Text>
-      </View>
-
-      <View style={{ alignItems: "center", marginTop: 10 }}>
-        <Text style={styles.text1}>Please enter the email and password</Text>
-        <Text style={styles.text1}>registered with your account</Text>
+      <View style={{ marginTop: 30, alignItems: "center" }}>
+        <Text style={title}>ĐĂNG NHẬP</Text>
       </View>
 
       <View style={{ marginTop: 20 }}>
@@ -44,10 +37,10 @@ export default function SignInScreen() {
           />
         </View>
 
-        <View>
+        <View style={styles.TextInput2}>
           <Animatable.View
-            animation={textInput2Fossued ? "" : "fadeInLeft"}
-            duration={400}
+          // animation={textInput2Fossued ? "" : "fadeInLeft"}
+          // duration={400}
           >
             <Icon
               name="lock"
@@ -57,7 +50,7 @@ export default function SignInScreen() {
             />
           </Animatable.View>
           <TextInput
-            style={styles.TextInput2}
+            style={{ width: "80%" }}
             placeholder="Password"
             onFocus={() => {
               setTextInput2Fossued(false);
@@ -67,8 +60,8 @@ export default function SignInScreen() {
             }}
           />
           <Animatable.View
-            animation={textInput2Fossued ? "" : "fadeInLeft"}
-            duration={400}
+          // animation={textInput2Fossued ? "" : "fadeInLeft"}
+          // duration={400}
           >
             <Icon
               name="visibility-off"
@@ -82,7 +75,7 @@ export default function SignInScreen() {
 
       <View style={{ marginHorizontal: 20, marginVertical: 20 }}>
         <Button
-          title="SIGN IN"
+          title="ĐĂNG NHẬP"
           buttonStyle={parameters.styledButton}
           titleStyle={parameters.buttonTitle}
           onPress={() => {
@@ -91,19 +84,19 @@ export default function SignInScreen() {
         />
       </View>
 
-      <View style={{ alignItems: "center", marginTop: 15 }}>
+      <View style={{ alignItems: "center", marginTop: 10 }}>
         <Text style={{ ...styles.text1, textDecorationLine: "underline" }}>
-          Forgot Password ?
+          Quên mật khẩu ?
         </Text>
       </View>
 
-      <View style={{ alignItems: "center", marginTop: 30, marginBottom: 30 }}>
-        <Text style={{ fontSize: 20, fontWeight: "bold" }}>OR</Text>
+      <View style={{ alignItems: "center", marginTop: 15, marginBottom: 15 }}>
+        <Text style={{ fontSize: 20, fontWeight: "bold" }}>Đăng nhập bằng</Text>
       </View>
 
       <View style={{ marginHorizontal: 10, marginTop: 10 }}>
         <SocialIcon
-          title="Sign In With Facebook"
+          title="Đăng nhập bằng Facebook"
           button
           type="facebook"
           style={styles.SocialIcon}
@@ -113,7 +106,7 @@ export default function SignInScreen() {
 
       <View style={{ marginHorizontal: 10, marginTop: 10 }}>
         <SocialIcon
-          title="Sign In With Google"
+          title="Đăng nhập bằng Google"
           button
           type="google"
           style={styles.SocialIcon}
@@ -122,12 +115,12 @@ export default function SignInScreen() {
       </View>
 
       <View style={{ marginTop: 25, marginLeft: 20 }}>
-        <Text style={{ ...styles.text1 }}>New on Food Eats</Text>
+        <Text style={{ ...styles.text1 }}>Đăng nhập lần đầu</Text>
       </View>
 
       <View style={{ alignItems: "flex-end", marginHorizontal: 20 }}>
         <Button
-          title="Create an account"
+          title="Tạo tài khoản mới"
           buttonStyle={styles.createButton}
           titleStyle={styles.createButtonTitle}
           onPress={() => {
@@ -156,6 +149,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     marginBottom: 20,
     paddingLeft: 15,
+    padding: 10,
   },
 
   TextInput2: {
@@ -168,6 +162,7 @@ const styles = StyleSheet.create({
     alignContent: "center",
     alignItems: "center",
     paddingLeft: 15,
+    padding: 10,
   },
 
   SocialIcon: {
