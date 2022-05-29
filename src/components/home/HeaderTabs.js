@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, StatusBar } from "react-native";
 
 export default function HeaderTabs(props) {
   return (

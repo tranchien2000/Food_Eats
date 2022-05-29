@@ -2,21 +2,12 @@ import React, { useEffect, useState } from "react";
 import { View, Text, SafeAreaView, ScrollView } from "react-native";
 import { useSelector } from "react-redux";
 import LottieView from "lottie-react-native";
-import firebase from "../firebase";
+import firebase from "../../firebase";
 import MenuItems from "../components/restaurantDetail/MenuItems";
+import { itemsOrder } from "../global/data";
 
 export default function OrderCompleted() {
-  const [lastOrder, setLastOrder] = useState({
-    items: [
-      {
-        title: "Bologna",
-        description: "With butter lettuce, tomato and sauce bechamel",
-        price: "$13.50",
-        image:
-          "https://www.modernhoney.com/wp-content/uploads/2019/08/Classic-Lasagna-14-scaled.jpg",
-      },
-    ],
-  });
+  const [lastOrder, setLastOrder] = useState({ itemsOrder });
 
   const { items, restaurantName } = useSelector(
     (state) => state.cartReducer.selectedItems

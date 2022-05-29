@@ -4,6 +4,7 @@ import { Divider } from "react-native-elements";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
+import { foods } from "../../global/data";
 
 const styles = StyleSheet.create({
   menuItemStyle: {

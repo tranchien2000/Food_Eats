@@ -1,11 +1,11 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
-import Home from "./screens/Home";
-import RestaurantDetail from "./screens/RestaurantDetail";
+import Home from "./src/screens/Home";
+import RestaurantDetail from "./src/screens/RestaurantDetail";
 import { Provider as ReduxProvider } from "react-redux";
-import configureStore from "./redux/store";
-import OrderCompleted from "./screens/OrderCompleted";
+import configureStore from "./src/redux/store";
+import OrderCompleted from "./src/screens/OrderCompleted";
 
 const store = configureStore();
 

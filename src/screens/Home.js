@@ -1,20 +1,21 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, SafeAreaView, ScrollView } from "react-native";
+import { View, Text, SafeAreaView, ScrollView, StatusBar } from "react-native";
 import { Divider } from "react-native-elements";
 import BottomTabs from "../components/home/BottomTabs";
 import Categories from "../components/home/Categories";
 import HeaderTabs from "../components/home/HeaderTabs";
-import RestaurantItems, {
-  localRestaurants,
-} from "../components/home/RestaurantItems";
+import RestaurantItems from "../components/home/RestaurantItems";
+import { localRestaurants } from "../global/data";
 import SearchBar from "../components/home/SearchBar";
 
+import { colors } from "../global/styles";
+
 const YELP_API_KEY =
-  "bdRJutLhFAQJ36t7b89CWjHFBU4OKzjt9wvZzcY-nkgmvTqlNMjZWV1eG7iBQ9R74SyfxRg9LWnBAkZY06BtAZAe4d2dfX-2vuX8a1l5V7foctHfX9UKEyoM5ts3YXYx";
+  "1hlfsgc5yajyROdWEg3gvJxk0Q0daxyxKnQUb1eP4sQGZqk91GfthUr5tb93plkTu1VbSsg5uTqOEm1BADvVqZ2snsBkfoB0gtD6Osdn4cecmfXrI21bcRfRFBOSYnYx";
 
 export default function Home({ navigation }) {
   const [restaurantData, setRestaurantData] = useState(localRestaurants);
-  const [city, setCity] = useState("San Francisco");
+  const [city, setCity] = useState("");
   const [activeTab, setActiveTab] = useState("Delivery");
 
   const getRestaurantsFromYelp = () => {
