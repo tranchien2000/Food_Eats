@@ -14,6 +14,7 @@ const YELP_API_KEY =
   "1hlfsgc5yajyROdWEg3gvJxk0Q0daxyxKnQUb1eP4sQGZqk91GfthUr5tb93plkTu1VbSsg5uTqOEm1BADvVqZ2snsBkfoB0gtD6Osdn4cecmfXrI21bcRfRFBOSYnYx";
 
 export default function Home({ navigation }) {
+  const [categoriesData, setCategoriesData] = useState(itemsCategories);
   const [restaurantData, setRestaurantData] = useState(localRestaurants);
   const [city, setCity] = useState("");
   const [activeTab, setActiveTab] = useState("Delivery");
@@ -38,9 +39,33 @@ export default function Home({ navigation }) {
       );
   };
 
+  // const getCategoriesFromYelp = () => {
+  //   const yelpUrl = `https://api.yelp.com/v3/categories`;
+
+  //   const apiOptions = {
+  //     headers: {
+  //       Authorization: `Bearer ${YELP_API_KEY}`,
+  //     },
+  //   };
+
+  //   return fetch(yelpUrl, apiOptions)
+  //     .then((res) => res.json())
+  //     .then((json) =>
+  //       setCategoriesData(
+  //         json.categories.filter((categories) =>
+  //           categories.transactions.includes(activeTab.toLowerCase())
+  //         )
+  //       )
+  //     );
+  // };
+
   useEffect(() => {
     getRestaurantsFromYelp();
   }, [city, activeTab]);
+
+  // useEffect(() => {
+  //   getCategoriesFromYelp();
+  // }, [city, activeTab]);
 
   return (
     <SafeAreaView style={{ backgroundColor: "#eee", flex: 1 }}>
@@ -49,7 +74,7 @@ export default function Home({ navigation }) {
         <SearchBar cityHandler={setCity} />
       </View>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <Categories />
+        <Categories categoriesData={categoriesData} navigation={navigation} />
         <RestaurantItems
           restaurantData={restaurantData}
           navigation={navigation}

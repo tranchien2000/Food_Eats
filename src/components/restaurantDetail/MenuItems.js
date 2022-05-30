@@ -96,3 +96,5 @@ const FoodImage = ({ marginLeft, ...props }) => (
     />
   </View>
 );
+
+

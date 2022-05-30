@@ -14,20 +14,28 @@ export default function Categories({ navigation, ...props }) {
       }}
     >
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-        {itemsCategories.map((item, index) => (
-          <View key={index} style={{ alignItems: "center", marginRight: 30 }}>
-            <Image
-              source={item.image}
-              style={{
-                width: 50,
-                height: 40,
-                resizeMode: "contain",
-              }}
-            />
-            <Text style={{ fontSize: 13, fontWeight: "900" }}>{item.title}</Text>
+        {itemsCategories.map((categories, index) => (
+          <View key={index}>
+            <CategoriesInfo categories={categories} />
           </View>
         ))}
       </ScrollView>
     </View>
   );
 }
+
+const CategoriesInfo = ({ ...props }) => (
+  <View style={{ alignItems: "center", marginRight: 30 }}>
+    <Image
+      source={props.categories.image}
+      style={{
+        width: 50,
+        height: 40,
+        resizeMode: "contain",
+      }}
+    />
+    <Text style={{ fontSize: 13, fontWeight: "900" }}>
+      {props.categories.title}
+    </Text>
+  </View>
+);
