@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, createRef } from "react";
 import { View, Text, SafeAreaView, ScrollView, StatusBar } from "react-native";
 import { Divider } from "react-native-elements";
 import BottomTabs from "../components/home/BottomTabs";
 import Categories from "../components/home/Categories";
 import HeaderTabs from "../components/home/HeaderTabs";
 import RestaurantItems from "../components/home/RestaurantItems";
-import { localRestaurants } from "../global/data";
+import { localRestaurants, itemsCategories } from "../global/data";
 import SearchBar from "../components/home/SearchBar";
 
 import { colors } from "../global/styles";

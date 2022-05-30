@@ -4,7 +4,7 @@ import { Divider } from "react-native-elements";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { foods } from "../../global/data";
+import { localRestaurants, foods } from "../../global/data";
 
 const styles = StyleSheet.create({
   menuItemStyle: {
@@ -18,6 +18,8 @@ const styles = StyleSheet.create({
     fontWeight: "600",
   },
 });
+
+// const foods = localRestaurants.map();
 
 export default function MenuItems({
   restaurantName,

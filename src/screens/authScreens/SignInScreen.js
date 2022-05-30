@@ -13,9 +13,6 @@ import { Icon, Button, SocialIcon } from "react-native-elements";
 
 import * as Animatable from "react-native-animatable";
 import { Formik } from "formik";
-import Header from "../../components/home/Header";
-// import auth from "@react-native-firebase/auth";
-// import { SignInContext } from "../../contexts/authContext";
 
 export default function SignInScreen({ navigation }) {
   const [textInput2Fossued, setTextInput2Fossued] = useState(false);
@@ -38,10 +35,7 @@ export default function SignInScreen({ navigation }) {
         </View>
 
         <View style={styles.TextInput2}>
-          <Animatable.View
-          // animation={textInput2Fossued ? "" : "fadeInLeft"}
-          // duration={400}
-          >
+          <Animatable.View>
             <Icon
               name="lock"
               iconStyle={{ color: colors.grey3 }}
@@ -59,10 +53,7 @@ export default function SignInScreen({ navigation }) {
               setTextInput2Fossued(true);
             }}
           />
-          <Animatable.View
-          // animation={textInput2Fossued ? "" : "fadeInLeft"}
-          // duration={400}
-          >
+          <Animatable.View>
             <Icon
               name="visibility-off"
               iconStyle={{ color: colors.grey3 }}

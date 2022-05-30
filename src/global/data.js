@@ -2,37 +2,37 @@ export const itemsCategories = [
   {
     id: 0,
     image: require("../assets/images/shopping-bag.png"),
-    text: "Pick-up",
+    title: "Pick-up",
   },
   {
     id: 1,
     image: require("../assets/images/soft-drink.png"),
-    text: "Soft Drinks",
+    title: "Soft Drinks",
   },
   {
     id: 2,
     image: require("../assets/images/bread.png"),
-    text: "Bakery Items",
+    title: "Bakery Items",
   },
   {
     id: 3,
     image: require("../assets/images/fast-food.png"),
-    text: "Fast Foods",
+    title: "Fast Foods",
   },
   {
     id: 4,
     image: require("../assets/images/deals.png"),
-    text: "Deals",
+    title: "Deals",
   },
   {
     id: 5,
     image: require("../assets/images/coffee.png"),
-    text: "Coffee & Tea",
+    title: "Coffee & Tea",
   },
   {
     id: 6,
     image: require("../assets/images/desserts.png"),
-    text: "Desserts",
+    title: "Desserts",
   },
 ];
 
@@ -84,7 +84,7 @@ export const foods = [
 export const localRestaurants = [
   {
     id: 0,
-    name: "Beachside Bar",
+    name: "Beachside ",
     image_url:
       "https://static.onecms.io/wp-content/uploads/sites/9/2020/04/24/ppp-why-wont-anyone-rescue-restaurants-FT-BLOG0420.jpg",
     categories: ["Cafe", "Bar"],
@@ -93,7 +93,7 @@ export const localRestaurants = [
     rating: 4.5,
     foodData: [
       {
-        id: 4,
+        id: 0,
         title: "Lasagna",
         description: "With butter lettuce, tomato and sauce bechamel",
         price: "$13.50",
@@ -111,16 +111,36 @@ export const localRestaurants = [
     price: "$$",
     reviews: 1244,
     rating: 3.7,
+    foodData: [
+      {
+        id: 0,
+        title: "Lasagna",
+        description: "With butter lettuce, tomato and sauce bechamel",
+        price: "$13.50",
+        image:
+          "https://thestayathomechef.com/wp-content/uploads/2017/08/Most-Amazing-Lasagna-2-e1574792735811.jpg",
+      },
+    ],
   },
   {
     id: 2,
-    name: "India's Grill",
+    name: "India's",
     image_url:
       "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cmVzdGF1cmFudCUyMGludGVyaW9yfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80",
     categories: ["Indian", "Bar"],
     price: "$$",
     reviews: 700,
     rating: 4.9,
+    foodData: [
+      {
+        id: 0,
+        title: "Lasagna",
+        description: "With butter lettuce, tomato and sauce bechamel",
+        price: "$13.50",
+        image:
+          "https://thestayathomechef.com/wp-content/uploads/2017/08/Most-Amazing-Lasagna-2-e1574792735811.jpg",
+      },
+    ],
   },
 ];
 

@@ -3,7 +3,7 @@ import { View, Text, Image, ScrollView } from "react-native";
 
 import { itemsCategories } from "../../global/data";
 
-export default function Categories() {
+export default function Categories({ navigation, ...props }) {
   return (
     <View
       style={{
@@ -24,7 +24,7 @@ export default function Categories() {
                 resizeMode: "contain",
               }}
             />
-            <Text style={{ fontSize: 13, fontWeight: "900" }}>{item.text}</Text>
+            <Text style={{ fontSize: 13, fontWeight: "900" }}>{item.title}</Text>
           </View>
         ))}
       </ScrollView>
